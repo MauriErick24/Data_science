@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>NorthWind</Name>
+    <Name>NorthWindOLTP</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{7750564d-0d18-4236-acc9-42df928b4b8f}</ProjectGuid>
@@ -11,8 +11,8 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>NorthWind</RootNamespace>
-    <AssemblyName>NorthWind</AssemblyName>
+    <RootNamespace>NorthWindOLTP</RootNamespace>
+    <AssemblyName>NorthWindOLTP</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -45,6 +45,7 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <SqlTargetName>NorthWindOLTTP</SqlTargetName>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -56,24 +57,22 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="NorthWindOLTP" />
-    <Folder Include="NorthWindDW" />
-    <Folder Include="NorthWindOLTP\Schema" />
-    <Folder Include="NorthWindOLTP\Schema\Tables" />
+    <Folder Include="Schema" />
+    <Folder Include="Schema\Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="NorthWindOLTP\Schema\Tables\Categories.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\CustomerCustomerDemo.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\CustomerDemographics.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\Customers.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\Employees.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\EmployeeTerritories.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\OrderDetails.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\Orders.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\Products.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\Region.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\Shippers.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\Suppliers.sql" />
-    <Build Include="NorthWindOLTP\Schema\Tables\Territories.sql" />
+    <Build Include="Schema\Tables\Categories.sql" />
+    <Build Include="Schema\Tables\CustomerCustomerDemo.sql" />
+    <Build Include="Schema\Tables\CustomerDemographics.sql" />
+    <Build Include="Schema\Tables\Customers.sql" />
+    <Build Include="Schema\Tables\Employees.sql" />
+    <Build Include="Schema\Tables\EmployeeTerritories.sql" />
+    <Build Include="Schema\Tables\OrderDetails.sql" />
+    <Build Include="Schema\Tables\Orders.sql" />
+    <Build Include="Schema\Tables\Products.sql" />
+    <Build Include="Schema\Tables\Region.sql" />
+    <Build Include="Schema\Tables\Shippers.sql" />
+    <Build Include="Schema\Tables\Suppliers.sql" />
+    <Build Include="Schema\Tables\Territories.sql" />
   </ItemGroup>
 </Project>
