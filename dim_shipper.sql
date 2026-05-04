@@ -1,21 +1,31 @@
 USE NorthwindDW;
 GO
 
-DROP TABLE IF EXISTS DimShipper;
+DROP TABLE IF EXISTS [dbo].[DimShipper];
 GO
 
-CREATE TABLE DimShipper (
-    ShipperKey INT IDENTITY(1,1) PRIMARY KEY,
-    ShipperID INT,
-    CompanyName NVARCHAR(100)
+CREATE TABLE [dbo].[DimShipper]
+(
+    [ShipperSK] INT IDENTITY(1,1) NOT NULL,
+    [ShipperID] INT NOT NULL,
+    [CompanyName] NVARCHAR(40) NOT NULL
 );
 GO
 
-INSERT INTO DimShipper (ShipperID, CompanyName)
+ALTER TABLE [dbo].[DimShipper]
+ADD CONSTRAINT PK_DimShipper PRIMARY KEY (ShipperSK);
+GO
+
+INSERT INTO [dbo].[DimShipper]
+(
+    ShipperID,
+    CompanyName
+)
 SELECT 
     ShipperID,
     CompanyName
 FROM Northwind.dbo.Shippers;
 GO
 
-SELECT * FROM DimShipper;
+SELECT * FROM [dbo].[DimShipper];
+GO
