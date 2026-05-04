@@ -1,4 +1,4 @@
-CREATE TABLE [dbo].[DimEmployee]
+﻿CREATE TABLE [dbo].[DimEmployee]
 (
     [EmployeeSK] INT IDENTITY(1,1) NOT NULL,
     [EmployeeID] INT NOT NULL,

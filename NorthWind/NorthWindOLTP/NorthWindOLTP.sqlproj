@@ -6,7 +6,7 @@
     <Name>NorthWindOLTP</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{38730fe4-de46-4dd5-8240-b04bf5dc39b3}</ProjectGuid>
+    <ProjectGuid>{c3ca2ecd-9dd3-48e3-bee1-8943b07d6963}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql170DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>

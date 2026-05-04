@@ -39,7 +39,7 @@ FOREIGN KEY (ProductSK)
 REFERENCES [dbo].[DimProduct] (ProductSK);
 GO
 
-/*ALTER TABLE [dbo].[FactSales]
+ALTER TABLE [dbo].[FactSales]
 ADD CONSTRAINT FK_FactSales_DimEmployee
 FOREIGN KEY (EmployeeSK)
 REFERENCES [dbo].[DimEmployee] (EmployeeSK);
@@ -51,7 +51,7 @@ FOREIGN KEY (ShipperSK)
 REFERENCES [dbo].[DimShipper] (ShipperSK);
 GO
 
-ALTER TABLE [dbo].[FactSales]
+/*ALTER TABLE [dbo].[FactSales]
 ADD CONSTRAINT FK_FactSales_OrderDate
 FOREIGN KEY (OrderDateKey)
 REFERENCES [dbo].[DimDate] (DateKey);

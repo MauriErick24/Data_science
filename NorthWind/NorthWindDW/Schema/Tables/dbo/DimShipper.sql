@@ -1,4 +1,4 @@
-CREATE TABLE [dbo].[DimShipper]
+﻿CREATE TABLE [dbo].[DimShipper]
 (
     [ShipperSK] INT IDENTITY(1,1) NOT NULL,
     [ShipperID] INT NOT NULL,

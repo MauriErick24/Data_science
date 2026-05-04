@@ -6,7 +6,7 @@
     <Name>NorthWindDW</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{b59af474-19a6-4c73-9f07-fb60140434b6}</ProjectGuid>
+    <ProjectGuid>{1a0d5e73-75f8-4b7a-9c13-254d2e2a7640}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql170DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -61,7 +61,9 @@
     <Folder Include="Schema\Tables\dbo" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="Schema\Tables\dbo\DimEmployee.sql" />
     <Build Include="Schema\Tables\dbo\DimProduct.sql" />
+    <Build Include="Schema\Tables\dbo\DimShipper.sql" />
     <Build Include="Schema\Tables\dbo\FactSales.sql" />
   </ItemGroup>
 </Project>
