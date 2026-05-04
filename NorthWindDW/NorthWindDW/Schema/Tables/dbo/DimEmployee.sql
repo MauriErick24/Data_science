@@ -1,9 +1,3 @@
-USE NorthwindDW;
-GO
-
-DROP TABLE IF EXISTS [dbo].[DimEmployee];
-GO
-
 CREATE TABLE [dbo].[DimEmployee]
 (
     [EmployeeSK] INT IDENTITY(1,1) NOT NULL,
@@ -18,26 +12,4 @@ GO
 
 ALTER TABLE [dbo].[DimEmployee]
 ADD CONSTRAINT PK_DimEmployee PRIMARY KEY (EmployeeSK);
-GO
-
-INSERT INTO [dbo].[DimEmployee]
-(
-    EmployeeID,
-    FullName,
-    Title,
-    City,
-    Country,
-    HireDate
-)
-SELECT 
-    EmployeeID,
-    FirstName + ' ' + LastName,
-    Title,
-    City,
-    Country,
-    HireDate
-FROM Northwind.dbo.Employees;
-GO
-
-SELECT * FROM [dbo].[DimEmployee];
 GO
