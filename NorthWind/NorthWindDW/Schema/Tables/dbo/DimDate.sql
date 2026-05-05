@@ -1,4 +1,0 @@
-﻿CREATE TABLE [dbo].[DimDate]
-(
-	[Id] INT NOT NULL PRIMARY KEY
-)
