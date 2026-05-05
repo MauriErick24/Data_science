@@ -65,5 +65,7 @@
     <Build Include="Schema\Tables\dbo\DimProduct.sql" />
     <Build Include="Schema\Tables\dbo\DimShipper.sql" />
     <Build Include="Schema\Tables\dbo\FactSales.sql" />
+    <Build Include="Schema\Tables\dbo\DimCustomer.sql" />
+    <Build Include="Schema\Tables\dbo\DimDate_1.sql" />
   </ItemGroup>
 </Project>
