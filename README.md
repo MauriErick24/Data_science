@@ -65,3 +65,73 @@ Facilitar el análisis de datos históricos para responder preguntas como:
 - T-SQL
 
 ---
+
+## 🚀 Despliegue del Proyecto
+
+### 📥 Obtener el proyecto
+
+#### Opción 1: Clonar el repositorio
+
+#### Opción 2: Descargar ZIP
+
+---
+
+### 🔧 Requisitos
+
+- SQL Server  
+- SQL Server Management Studio (SSMS)  
+- Base de datos Northwind restaurada  
+
+---
+
+### 🗄️ Crear el Data Warehouse
+
+Ejecutar:
+
+```sql
+CREATE DATABASE NorthwindDW;
+GO
+```
+
+---
+
+### 🧱 Ejecutar scripts
+
+Ir a la carpeta:
+
+```
+Schema/Tables/dbo/
+```
+
+Ejecutar los archivos en SQL Server:
+
+- DimCustomer.sql  
+- DimEmployee.sql  
+- DimProduct.sql  
+- DimShipper.sql  
+- DimDate.sql  
+- FactSales.sql  
+
+---
+
+### 🔄 Poblar datos (opcional)
+
+Ejecutar los scripts ETL para cargar datos desde Northwind.
+
+---
+
+### ✅ Verificación
+
+```sql
+SELECT * FROM DimEmployee;
+SELECT * FROM DimShipper;
+SELECT * FROM FactSales;
+```
+
+---
+
+### ✔ Resultado esperado
+
+- Base de datos **NorthwindDW** creada  
+- Tablas de dimensiones y hechos creadas correctamente  
+- Datos listos para análisis  
