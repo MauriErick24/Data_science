@@ -27,11 +27,11 @@ ALTER TABLE [dbo].[FactSales]
 ADD CONSTRAINT PK_FactSales PRIMARY KEY (OrderID, ProductID);
 GO
 
-/*ALTER TABLE [dbo].[FactSales]
+ALTER TABLE [dbo].[FactSales]
 ADD CONSTRAINT FK_FactSales_DimCustomer
 FOREIGN KEY (CustomerSK)
 REFERENCES [dbo].[DimCustomer] (CustomerSK);
-GO*/
+GO
 
 ALTER TABLE [dbo].[FactSales]
 ADD CONSTRAINT FK_FactSales_DimProduct
@@ -51,7 +51,7 @@ FOREIGN KEY (ShipperSK)
 REFERENCES [dbo].[DimShipper] (ShipperSK);
 GO
 
-/*ALTER TABLE [dbo].[FactSales]
+ALTER TABLE [dbo].[FactSales]
 ADD CONSTRAINT FK_FactSales_OrderDate
 FOREIGN KEY (OrderDateKey)
 REFERENCES [dbo].[DimDate] (DateKey);
@@ -67,4 +67,4 @@ ALTER TABLE [dbo].[FactSales]
 ADD CONSTRAINT FK_FactSales_ShippedDate
 FOREIGN KEY (ShippedDateKey)
 REFERENCES [dbo].[DimDate] (DateKey);
-GO*/
+GO
