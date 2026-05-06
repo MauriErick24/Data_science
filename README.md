@@ -65,7 +65,10 @@ Facilitar el análisis de datos históricos para responder preguntas como:
 - T-SQL
 
 ---
+## 🧠 Modelo E-R NorthWindOLTP
+<img width="852" height="1138" alt="image" src="https://github.com/user-attachments/assets/231339e7-e0f9-4e52-b8ea-bb1caac9daa9" />
 
+---
 ## 🚀 Despliegue del Proyecto
 
 ### 📥 Obtener el proyecto
