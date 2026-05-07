@@ -1,5 +1,6 @@
 ## Integrantes:
 Ariel Leandro Vera Vargas
+Mauricio Erick Molina Beltran
 ## Northwind
 
 ## 1. Descripción del Proyecto
