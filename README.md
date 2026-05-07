@@ -1,3 +1,5 @@
+## Integrantes:
+Ariel Leandro Vera Vargas
 ## Northwind
 
 ## 1. Descripción del Proyecto
