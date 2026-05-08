@@ -1,11 +1,24 @@
-﻿CREATE TABLE [dbo].[CustomerCustomerDemo](
-	[CustomerID] [nchar](5) NOT NULL,
-	[CustomerTypeID] [nchar](10) NOT NULL,
-	[rowversion] [timestamp] NULL,
- CONSTRAINT [PK_CustomerCustomerDemo] PRIMARY KEY NONCLUSTERED 
+﻿CREATE TABLE [dbo].[CustomerCustomerDemo]
 (
-	[CustomerID] ASC,
-	[CustomerTypeID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+    [CustomerID]       [nchar](5)    NOT NULL,
+    [CustomerTypeID]   [nchar](10)   NOT NULL,
+    [rowversion]       [timestamp]   NOT NULL
+);
+GO
+
+ALTER TABLE [dbo].[CustomerCustomerDemo]
+ADD CONSTRAINT [PK_CustomerCustomerDemo]
+PRIMARY KEY ([CustomerID], [CustomerTypeID]);
+GO
+
+ALTER TABLE [dbo].[CustomerCustomerDemo]
+ADD CONSTRAINT [FK_CustomerCustomerDemo_Customers]
+FOREIGN KEY ([CustomerID])
+REFERENCES [dbo].[Customers] ([CustomerID]);
+GO
+
+ALTER TABLE [dbo].[CustomerCustomerDemo]
+ADD CONSTRAINT [FK_CustomerCustomerDemo_Demographics]
+FOREIGN KEY ([CustomerTypeID])
+REFERENCES [dbo].[CustomerDemographics] ([CustomerTypeID]);
 GO

@@ -1,10 +1,12 @@
-﻿CREATE TABLE [dbo].[Region](
-	[RegionID] [int] NOT NULL,
-	[RegionDescription] [nchar](50) NOT NULL,
-	[rowversion] [timestamp] NULL,
- CONSTRAINT [PK_Region] PRIMARY KEY NONCLUSTERED 
+﻿CREATE TABLE [dbo].[Region]
 (
-	[RegionID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+    [RegionID]             [int]       NOT NULL,
+    [RegionDescription]    [nchar](50) NOT NULL,
+    [rowversion]           [timestamp] NOT NULL
+);
+GO
+
+ALTER TABLE [dbo].[Region]
+ADD CONSTRAINT [PK_Region]
+PRIMARY KEY ([RegionID]);
 GO

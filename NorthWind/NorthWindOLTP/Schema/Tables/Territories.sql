@@ -1,17 +1,19 @@
-﻿CREATE TABLE [dbo].[Territories](
-	[TerritoryID] [nvarchar](20) NOT NULL,
-	[TerritoryDescription] [nchar](50) NOT NULL,
-	[RegionID] [int] NOT NULL,
-	[rowversion] [timestamp] NULL,
- CONSTRAINT [PK_Territories] PRIMARY KEY NONCLUSTERED 
+﻿CREATE TABLE [dbo].[Territories]
 (
-	[TerritoryID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+    [TerritoryID]              [nvarchar](20) NOT NULL,
+    [TerritoryDescription]     [nchar](50)    NOT NULL,
+    [RegionID]                 [int]          NOT NULL,
+    [rowversion]               [timestamp]    NOT NULL
+);
 GO
 
-ALTER TABLE [dbo].[Territories]  WITH CHECK ADD  CONSTRAINT [FK_Territories_Region] FOREIGN KEY([RegionID])
-REFERENCES [dbo].[Region] ([RegionID])
+ALTER TABLE [dbo].[Territories]
+ADD CONSTRAINT [PK_Territories]
+PRIMARY KEY ([TerritoryID]);
 GO
-ALTER TABLE [dbo].[Territories] CHECK CONSTRAINT [FK_Territories_Region]
+
+ALTER TABLE [dbo].[Territories]
+ADD CONSTRAINT [FK_Territories_Region]
+FOREIGN KEY ([RegionID])
+REFERENCES [dbo].[Region] ([RegionID]);
 GO

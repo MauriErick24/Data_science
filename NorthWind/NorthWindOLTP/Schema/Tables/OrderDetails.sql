@@ -1,43 +1,57 @@
-﻿CREATE TABLE [dbo].[OrderDetails](
-	[OrderID] [int] NOT NULL,
-	[ProductID] [int] NOT NULL,
-	[UnitPrice] [money] NOT NULL,
-	[Quantity] [smallint] NOT NULL,
-	[Discount] [real] NOT NULL,
-	[rowversion] [timestamp] NULL,
- CONSTRAINT [PK_Order_Details] PRIMARY KEY CLUSTERED 
+﻿CREATE TABLE [dbo].[OrderDetails]
 (
-	[OrderID] ASC,
-	[ProductID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+    [OrderID]        [int]       NOT NULL,
+    [ProductID]      [int]       NOT NULL,
+    [UnitPrice]      [money]     NOT NULL,
+    [Quantity]       [smallint]  NOT NULL,
+    [Discount]       [real]      NOT NULL,
+    [rowversion]     [timestamp] NOT NULL
+);
 GO
 
-ALTER TABLE [dbo].[OrderDetails] ADD  CONSTRAINT [DF_Order_Details_UnitPrice]  DEFAULT ((0)) FOR [UnitPrice]
+ALTER TABLE [dbo].[OrderDetails]
+ADD CONSTRAINT [PK_OrderDetails]
+PRIMARY KEY ([OrderID], [ProductID]);
 GO
-ALTER TABLE [dbo].[OrderDetails] ADD  CONSTRAINT [DF_Order_Details_Quantity]  DEFAULT ((1)) FOR [Quantity]
+
+ALTER TABLE [dbo].[OrderDetails]
+ADD CONSTRAINT [FK_OrderDetails_Orders]
+FOREIGN KEY ([OrderID])
+REFERENCES [dbo].[Orders] ([OrderID]);
 GO
-ALTER TABLE [dbo].[OrderDetails] ADD  CONSTRAINT [DF_Order_Details_Discount]  DEFAULT ((0)) FOR [Discount]
+
+ALTER TABLE [dbo].[OrderDetails]
+ADD CONSTRAINT [FK_OrderDetails_Products]
+FOREIGN KEY ([ProductID])
+REFERENCES [dbo].[Products] ([ProductID]);
 GO
-ALTER TABLE [dbo].[OrderDetails]  WITH NOCHECK ADD  CONSTRAINT [FK_Order_Details_Orders] FOREIGN KEY([OrderID])
-REFERENCES [dbo].[Orders] ([OrderID])
+
+ALTER TABLE [dbo].[OrderDetails]
+ADD CONSTRAINT [DF_OrderDetails_UnitPrice]
+DEFAULT ((0)) FOR [UnitPrice];
 GO
-ALTER TABLE [dbo].[OrderDetails] CHECK CONSTRAINT [FK_Order_Details_Orders]
+
+ALTER TABLE [dbo].[OrderDetails]
+ADD CONSTRAINT [DF_OrderDetails_Quantity]
+DEFAULT ((1)) FOR [Quantity];
 GO
-ALTER TABLE [dbo].[OrderDetails]  WITH NOCHECK ADD  CONSTRAINT [FK_Order_Details_Products] FOREIGN KEY([ProductID])
-REFERENCES [dbo].[Products] ([ProductID])
+
+ALTER TABLE [dbo].[OrderDetails]
+ADD CONSTRAINT [DF_OrderDetails_Discount]
+DEFAULT ((0)) FOR [Discount];
 GO
-ALTER TABLE [dbo].[OrderDetails] CHECK CONSTRAINT [FK_Order_Details_Products]
+
+ALTER TABLE [dbo].[OrderDetails]
+ADD CONSTRAINT [CK_OrderDetails_UnitPrice]
+CHECK ([UnitPrice] >= 0);
 GO
-ALTER TABLE [dbo].[OrderDetails]  WITH NOCHECK ADD  CONSTRAINT [CK_Discount] CHECK  (([Discount]>=(0) AND [Discount]<=(1)))
+
+ALTER TABLE [dbo].[OrderDetails]
+ADD CONSTRAINT [CK_OrderDetails_Quantity]
+CHECK ([Quantity] > 0);
 GO
-ALTER TABLE [dbo].[OrderDetails] CHECK CONSTRAINT [CK_Discount]
-GO
-ALTER TABLE [dbo].[OrderDetails]  WITH NOCHECK ADD  CONSTRAINT [CK_Quantity] CHECK  (([Quantity]>(0)))
-GO
-ALTER TABLE [dbo].[OrderDetails] CHECK CONSTRAINT [CK_Quantity]
-GO
-ALTER TABLE [dbo].[OrderDetails]  WITH NOCHECK ADD  CONSTRAINT [CK_UnitPrice] CHECK  (([UnitPrice]>=(0)))
-GO
-ALTER TABLE [dbo].[OrderDetails] CHECK CONSTRAINT [CK_UnitPrice]
+
+ALTER TABLE [dbo].[OrderDetails]
+ADD CONSTRAINT [CK_OrderDetails_Discount]
+CHECK ([Discount] >= 0 AND [Discount] <= 1);
 GO
