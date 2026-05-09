@@ -4,6 +4,12 @@
     <BuildType Name="Development" />
     <BuildType Name="Release" />
   </Configurations>
+  <Folder Name="/SSIS/">
+    <Project Path="../../Northwind/Proyecto/SSIS/SSIS_NorthWind/SSIS_NorthWind/SSIS_NorthWind.dtproj" Type="c9674dcb-5085-4a16-b785-4c70dd1589bd">
+      <BuildType Project="Development" />
+      <Platform Project="?" />
+    </Project>
+  </Folder>
   <Project Path="NorthWindDW/NorthWindDW.sqlproj" Id="1a0d5e73-75f8-4b7a-9c13-254d2e2a7640">
     <BuildType Solution="Development|*" Project="Release" />
     <Build />
@@ -13,9 +19,5 @@
     <BuildType Solution="Development|*" Project="Release" />
     <Build />
     <Deploy />
-  </Project>
-  <Project Path="SSIS_NorthWind/SSIS_NorthWind.dtproj" Type="c9674dcb-5085-4a16-b785-4c70dd1589bd">
-    <BuildType Project="Development" />
-    <Platform Project="?" />
   </Project>
 </Solution>
