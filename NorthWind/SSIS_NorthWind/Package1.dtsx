@@ -5,13 +5,13 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-3SFQGID"
   DTS:CreatorName="DESKTOP-3SFQGID\PC"
-  DTS:DTSID="{895773EC-F925-4154-BB5F-8D917B34EFF8}"
+  DTS:DTSID="{E4686AF0-A64A-4C68-BC3B-1BC7BA4F30B6}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="2058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionGUID="{CE8D8F49-B2B7-4735-8878-BA022F232F6D}">
+  DTS:VersionGUID="{8EADAFC3-96E8-4D1F-9E37-ACF8B3A0C32A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
