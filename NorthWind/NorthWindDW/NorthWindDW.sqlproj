@@ -80,6 +80,11 @@
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimShipper.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\GetLastPackageRowVersion.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\UpdateLastPackageRowVersion.sql" />
-    <Build Include="Schema\Security\Schemas\Script1.sql" />
+    <Build Include="Schema\Security\Schemas\staging.sql" />
+    <Build Include="Schema\Tables\staging\customer.sql" />
+    <Build Include="Schema\Tables\staging\product.sql" />
+    <Build Include="Schema\Tables\staging\employee.sql" />
+    <Build Include="Schema\Tables\staging\shipper.sql" />
+    <Build Include="Schema\Tables\staging\sales.sql" />
   </ItemGroup>
 </Project>
