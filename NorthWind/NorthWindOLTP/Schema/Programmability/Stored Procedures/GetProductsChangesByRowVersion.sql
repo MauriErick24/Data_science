@@ -11,7 +11,8 @@ BEGIN
         p.ProductName,
         p.UnitPrice,
         c.CategoryName,
-        s.CompanyName AS SupplierName
+        s.CompanyName AS SupplierName,
+        p.Discontinued
     FROM dbo.Products p
     INNER JOIN dbo.Categories c
         ON p.CategoryID = c.CategoryID
