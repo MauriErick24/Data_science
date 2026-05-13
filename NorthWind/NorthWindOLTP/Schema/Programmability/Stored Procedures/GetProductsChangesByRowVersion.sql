@@ -19,8 +19,14 @@ BEGIN
     INNER JOIN dbo.Suppliers s
         ON p.SupplierID = s.SupplierID
     WHERE
-        p.rowversion > CONVERT(ROWVERSION, @startRow)
-        AND p.rowversion <= CONVERT(ROWVERSION, @endRow);
+        (p.rowversion > CONVERT(ROWVERSION, @startRow)
+         AND p.rowversion <= CONVERT(ROWVERSION, @endRow))
+    OR
+        (c.rowversion > CONVERT(ROWVERSION, @startRow)
+         AND c.rowversion <= CONVERT(ROWVERSION, @endRow))
+    OR
+        (s.rowversion > CONVERT(ROWVERSION, @startRow)
+         AND s.rowversion <= CONVERT(ROWVERSION, @endRow));
 
 END
 GO
