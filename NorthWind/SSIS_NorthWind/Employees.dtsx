@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="employees"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{5C723B6E-5088-46AC-97DF-8C27F148B624}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{657704F5-3397-431D-9993-F4109F3C647E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -138,11 +138,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Load Employees\Get Products"
+              refId="Package\Load Employees\Get Employees"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Get Products"
+              name="Get Employees"
               usesDispositions="true"
               version="7">
               <properties>
@@ -189,7 +189,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Employees\Get Products.Connections[OleDbConnection]"
+                  refId="Package\Load Employees\Get Employees.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Source.NorthWindOLTP]"
                   connectionManagerRefId="Package.ConnectionManagers[Source.NorthWindOLTP]"
                   description="The OLE DB runtime connection used to access the database."
@@ -197,170 +197,170 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output]"
+                  refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      externalMetadataColumnId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]"
                       name="EmployeeID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[FirstName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      externalMetadataColumnId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
                       length="10"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[FirstName]"
                       name="FirstName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[LastName]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[LastName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      externalMetadataColumnId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
                       length="20"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[LastName]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[LastName]"
                       name="LastName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[Title]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[Title]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      externalMetadataColumnId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[Title]"
                       length="30"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[Title]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[Title]"
                       name="Title"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[City]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[City]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      externalMetadataColumnId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       length="15"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[City]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[City]"
                       name="City"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[Country]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[Country]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      externalMetadataColumnId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[Country]"
                       length="15"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[Country]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[Country]"
                       name="Country"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[HireDate]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[HireDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[HireDate]"
+                      externalMetadataColumnId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[HireDate]"
                       name="HireDate"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
                       dataType="i4"
                       name="EmployeeID" />
                     <externalMetadataColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
                       dataType="wstr"
                       length="10"
                       name="FirstName" />
                     <externalMetadataColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
                       dataType="wstr"
                       length="20"
                       name="LastName" />
                     <externalMetadataColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[Title]"
                       dataType="wstr"
                       length="30"
                       name="Title" />
                     <externalMetadataColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       dataType="wstr"
                       length="15"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[Country]"
                       dataType="wstr"
                       length="15"
                       name="Country" />
                     <externalMetadataColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
                       dataType="dbTimeStamp"
                       name="HireDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
                       dataType="i4"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
                       name="EmployeeID" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[FirstName]"
                       dataType="wstr"
                       length="10"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[FirstName]"
                       name="FirstName" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[LastName]"
                       dataType="wstr"
                       length="20"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[LastName]"
                       name="LastName" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[Title]"
                       dataType="wstr"
                       length="30"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[Title]"
                       name="Title" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[City]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[City]"
                       dataType="wstr"
                       length="15"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[City]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[City]"
                       name="City" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[Country]"
                       dataType="wstr"
                       length="15"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[Country]"
                       name="Country" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[HireDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[HireDate]"
                       name="HireDate" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -445,41 +445,41 @@
                       cachedDataType="i4"
                       cachedName="EmployeeID"
                       externalMetadataColumnId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[EmployeeID]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]" />
                     <inputColumn
                       refId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].Columns[Title]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="Title"
                       externalMetadataColumnId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[Title]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[Title]" />
                     <inputColumn
                       refId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].Columns[City]"
                       cachedDataType="wstr"
                       cachedLength="15"
                       cachedName="City"
                       externalMetadataColumnId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[City]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[City]" />
                     <inputColumn
                       refId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].Columns[Country]"
                       cachedDataType="wstr"
                       cachedLength="15"
                       cachedName="Country"
                       externalMetadataColumnId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[Country]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[Country]" />
                     <inputColumn
                       refId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].Columns[HireDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="HireDate"
                       externalMetadataColumnId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].ExternalColumns[HireDate]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[HireDate]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[HireDate]" />
                     <inputColumn
                       refId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].Columns[FirstName]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="FirstName"
                       externalMetadataColumnId="Package\Load Employees\Load Dim.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[FirstName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -621,28 +621,28 @@
                       cachedDataType="i4"
                       cachedName="EmployeeID"
                       externalMetadataColumnId="Package\Load Employees\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[EmployeeID]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]" />
                     <inputColumn
                       refId="Package\Load Employees\Load Staging.Inputs[OLE DB Destination Input].Columns[Title]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="Title"
                       externalMetadataColumnId="Package\Load Employees\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[Title]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[Title]" />
                     <inputColumn
                       refId="Package\Load Employees\Load Staging.Inputs[OLE DB Destination Input].Columns[City]"
                       cachedDataType="wstr"
                       cachedLength="15"
                       cachedName="City"
                       externalMetadataColumnId="Package\Load Employees\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[City]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[City]" />
                     <inputColumn
                       refId="Package\Load Employees\Load Staging.Inputs[OLE DB Destination Input].Columns[Country]"
                       cachedDataType="wstr"
                       cachedLength="15"
                       cachedName="Country"
                       externalMetadataColumnId="Package\Load Employees\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[Country]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[Country]" />
                     <inputColumn
                       refId="Package\Load Employees\Load Staging.Inputs[OLE DB Destination Input].Columns[EmployeeSK]"
                       cachedDataType="i4"
@@ -655,7 +655,7 @@
                       cachedLength="10"
                       cachedName="FirstName"
                       externalMetadataColumnId="Package\Load Employees\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[FirstName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -772,7 +772,7 @@ where [refTable].[EmployeeID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[EmployeeID]};</property>
+                  name="ParameterMap">#{Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -799,7 +799,7 @@ where [refTable].[EmployeeID] = ?</property>
                       refId="Package\Load Employees\Lookup.Inputs[Lookup Input].Columns[EmployeeID]"
                       cachedDataType="i4"
                       cachedName="EmployeeID"
-                      lineageId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output].Columns[EmployeeID]">
+                      lineageId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -888,7 +888,7 @@ where [refTable].[EmployeeID] = ?</property>
               refId="Package\Load Employees.Paths[OLE DB Source Output]"
               endId="Package\Load Employees\Lookup.Inputs[Lookup Input]"
               name="OLE DB Source Output"
-              startId="Package\Load Employees\Get Products.Outputs[OLE DB Source Output]" />
+              startId="Package\Load Employees\Get Employees.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1152,16 +1152,16 @@ where [refTable].[EmployeeID] = ?</property>
           Id="Package\Load Employees\Load Staging"
           TopLeft="40,315" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\Load Employees\Get Products"
-          TopLeft="146,73" />
-        <NodeLayout
           Size="124,42"
           Id="Package\Load Employees\Load Dim"
           TopLeft="252,316" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Load Employees\Get Employees"
+          TopLeft="146,73" />
         <EdgeLayout
           Id="Package\Load Employees.Paths[OLE DB Source Output]"
-          TopLeft="216.5,115">
+          TopLeft="219,115">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1262,7 +1262,7 @@ where [refTable].[EmployeeID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1272,7 +1272,7 @@ where [refTable].[EmployeeID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1293,14 +1293,6 @@ where [refTable].[EmployeeID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Employees\Get Products">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load Employees\Load Dim">
     <Properties>
       <Property>
@@ -1310,6 +1302,14 @@ where [refTable].[EmployeeID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Employees\Get Employees">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
