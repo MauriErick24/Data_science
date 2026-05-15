@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="orders"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{184E72C8-ECDE-473A-A3E6-F648256CEF63}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{6282BC2E-70A4-4B7C-BC86-AB1B89312340}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-3SFQGID;Initial Catalog=NorthWindOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-orders-{00978F2E-C75D-4C51-BF14-092F1A4EAF7E}DESKTOP-3SFQGID.NorthWindOLTP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-3SFQGID;Initial Catalog=NorthWindOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-orders-{00978F2E-C75D-4C51-BF14-092F1A4EAF7E}DESKTOP-3SFQGID.NorthWindOLTP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-3SFQGID;Initial Catalog=NorthWindDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-orders-{2C440A62-B75D-47A0-AA01-FEA3E1AEDB5C}DESKTOP-3SFQGID.NorthWindDW;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-3SFQGID;Initial Catalog=NorthWindDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-orders-{2C440A62-B75D-47A0-AA01-FEA3E1AEDB5C}DESKTOP-3SFQGID.NorthWindDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -217,19 +217,22 @@
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderID]" />
                     <inputColumn
                       refId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].Columns[OrderDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="OrderDate"
                       externalMetadataColumnId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]" />
                     <inputColumn
                       refId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].Columns[RequiredDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="RequiredDate"
                       externalMetadataColumnId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[RequiredDate]"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDate]" />
                     <inputColumn
                       refId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].Columns[ShippedDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="ShippedDate"
                       externalMetadataColumnId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[ShippedDate]"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDate]" />
@@ -281,6 +284,30 @@
                       cachedName="ShipperSK"
                       externalMetadataColumnId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[ShipperSK]"
                       lineageId="Package\Load Sales\Lookup ShipperSK.Outputs[Lookup Match Output].Columns[ShipperSK]" />
+                    <inputColumn
+                      refId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].Columns[OrderDateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrderDateKey"
+                      externalMetadataColumnId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[OrderDateKey]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDateKey]" />
+                    <inputColumn
+                      refId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].Columns[RequiredDateKey]"
+                      cachedDataType="i4"
+                      cachedName="RequiredDateKey"
+                      externalMetadataColumnId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[RequiredDateKey]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDateKey]" />
+                    <inputColumn
+                      refId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].Columns[ShippedDateKey]"
+                      cachedDataType="i4"
+                      cachedName="ShippedDateKey"
+                      externalMetadataColumnId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[ShippedDateKey]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDateKey]" />
+                    <inputColumn
+                      refId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].Columns[SalesAmount]"
+                      cachedDataType="r4"
+                      cachedName="SalesAmount"
+                      externalMetadataColumnId="Package\Load Sales\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesAmount]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -436,7 +463,7 @@ where [refTable].[CustomerID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]};</property>
+                  name="ParameterMap">#{Package\Load Sales\231:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -595,7 +622,7 @@ where [refTable].[EmployeeID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeeID]};</property>
+                  name="ParameterMap">#{Package\Load Sales\232:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -753,7 +780,7 @@ where [refTable].[ProductID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]};</property>
+                  name="ParameterMap">#{Package\Load Sales\237:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -911,7 +938,7 @@ where [refTable].[OrderID] = ? and [refTable].[ProductID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderID]};#{Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]};</property>
+                  name="ParameterMap">#{Package\Load Sales\230:invalid};#{Package\Load Sales\237:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1068,7 +1095,7 @@ where [refTable].[ShipperID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipVia]};</property>
+                  name="ParameterMap">#{Package\Load Sales\233:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1249,19 +1276,22 @@ where [refTable].[ShipperID] = ?</property>
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderID]" />
                     <inputColumn
                       refId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].Columns[OrderDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="OrderDate"
                       externalMetadataColumnId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]" />
                     <inputColumn
                       refId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].Columns[RequiredDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="RequiredDate"
                       externalMetadataColumnId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].ExternalColumns[RequiredDate]"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDate]" />
                     <inputColumn
                       refId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].Columns[ShippedDate]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="ShippedDate"
                       externalMetadataColumnId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].ExternalColumns[ShippedDate]"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDate]" />
@@ -1313,6 +1343,30 @@ where [refTable].[ShipperID] = ?</property>
                       cachedName="ShipperSK"
                       externalMetadataColumnId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].ExternalColumns[ShipperSK]"
                       lineageId="Package\Load Sales\Lookup ShipperSK.Outputs[Lookup Match Output].Columns[ShipperSK]" />
+                    <inputColumn
+                      refId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].Columns[OrderDateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrderDateKey"
+                      externalMetadataColumnId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].ExternalColumns[OrderDateKey]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDateKey]" />
+                    <inputColumn
+                      refId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].Columns[RequiredDateKey]"
+                      cachedDataType="i4"
+                      cachedName="RequiredDateKey"
+                      externalMetadataColumnId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].ExternalColumns[RequiredDateKey]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDateKey]" />
+                    <inputColumn
+                      refId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].Columns[ShippedDateKey]"
+                      cachedDataType="i4"
+                      cachedName="ShippedDateKey"
+                      externalMetadataColumnId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].ExternalColumns[ShippedDateKey]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDateKey]" />
+                    <inputColumn
+                      refId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].Columns[SalesAmount]"
+                      cachedDataType="r4"
+                      cachedName="SalesAmount"
+                      externalMetadataColumnId="Package\Load Sales\New Sales.Inputs[OLE DB Destination Input].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesAmount]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1484,6 +1538,33 @@ where [refTable].[ShipperID] = ?</property>
                       name="OrderID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDateKey]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDateKey]"
+                      name="OrderDateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RequiredDateKey]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDateKey]"
+                      name="RequiredDateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShippedDateKey]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDateKey]"
+                      name="ShippedDateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -1510,33 +1591,6 @@ where [refTable].[ShipperID] = ?</property>
                       externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShipVia]"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipVia]"
                       name="ShipVia"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
-                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]"
-                      name="OrderDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RequiredDate]"
-                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDate]"
-                      name="RequiredDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShippedDate]"
-                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDate]"
-                      name="ShippedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]"
@@ -1574,6 +1628,45 @@ where [refTable].[ShipperID] = ?</property>
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[Discount]"
                       name="Discount"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                      length="10"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RequiredDate]"
+                      length="10"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[RequiredDate]"
+                      name="RequiredDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShippedDate]"
+                      length="10"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippedDate]"
+                      name="ShippedDate"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1581,6 +1674,18 @@ where [refTable].[ShipperID] = ?</property>
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
                       dataType="i4"
                       name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDateKey]"
+                      dataType="i4"
+                      name="OrderDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RequiredDateKey]"
+                      dataType="i4"
+                      name="RequiredDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShippedDateKey]"
+                      dataType="i4"
+                      name="ShippedDateKey" />
                     <externalMetadataColumn
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
                       dataType="wstr"
@@ -1594,18 +1699,6 @@ where [refTable].[ShipperID] = ?</property>
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShipVia]"
                       dataType="i4"
                       name="ShipVia" />
-                    <externalMetadataColumn
-                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
-                      dataType="dbTimeStamp"
-                      name="OrderDate" />
-                    <externalMetadataColumn
-                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RequiredDate]"
-                      dataType="dbTimeStamp"
-                      name="RequiredDate" />
-                    <externalMetadataColumn
-                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShippedDate]"
-                      dataType="dbTimeStamp"
-                      name="ShippedDate" />
                     <externalMetadataColumn
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
                       dataType="i4"
@@ -1622,6 +1715,25 @@ where [refTable].[ShipperID] = ?</property>
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
                       dataType="r4"
                       name="Discount" />
+                    <externalMetadataColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      dataType="r4"
+                      name="SalesAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RequiredDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShippedDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="ShippedDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1634,6 +1746,21 @@ where [refTable].[ShipperID] = ?</property>
                       dataType="i4"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderID]"
                       name="OrderID" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDateKey]"
+                      name="OrderDateKey" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RequiredDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RequiredDateKey]"
+                      name="RequiredDateKey" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShippedDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShippedDateKey]"
+                      name="ShippedDateKey" />
                     <outputColumn
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
                       dataType="wstr"
@@ -1650,21 +1777,6 @@ where [refTable].[ShipperID] = ?</property>
                       dataType="i4"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShipVia]"
                       name="ShipVia" />
-                    <outputColumn
-                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
-                      name="OrderDate" />
-                    <outputColumn
-                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RequiredDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RequiredDate]"
-                      name="RequiredDate" />
-                    <outputColumn
-                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShippedDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShippedDate]"
-                      name="ShippedDate" />
                     <outputColumn
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
                       dataType="i4"
@@ -1685,6 +1797,29 @@ where [refTable].[ShipperID] = ?</property>
                       dataType="r4"
                       lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Discount]"
                       name="Discount" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      dataType="r4"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      name="OrderDate" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RequiredDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RequiredDate]"
+                      name="RequiredDate" />
+                    <outputColumn
+                      refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShippedDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShippedDate]"
+                      name="ShippedDate" />
                     <outputColumn
                       refId="Package\Load Sales\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1774,7 +1909,7 @@ where [refTable].[ShipperID] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{2C440A62-B75D-47A0-AA01-FEA3E1AEDB5C}"
-          SQLTask:SqlStatementSource="EXECUTE @RC = [dbo].[UpdateLastPackageRowVersion] &#xA;   @tableName = 'Sales'&#xA;  ,@lastRowVersion = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] &#xA;   @tableName = 'Sales'&#xA;  ,@lastRowVersion = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::dbts"
@@ -2022,18 +2157,6 @@ where [refTable].[ShipperID] = ?</property>
           Id="Package\Load Sales\OLE DB Source"
           TopLeft="129,45" />
         <NodeLayout
-          Size="174,42"
-          Id="Package\Load Sales\Lookup EmployeeSK"
-          TopLeft="115,236" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Load Sales\Lookup ShipperSK"
-          TopLeft="115,417" />
-        <NodeLayout
-          Size="141,42"
-          Id="Package\Load Sales\Lookup Sales"
-          TopLeft="129,507" />
-        <NodeLayout
           Size="173,42"
           Id="Package\Load Sales\Lookup CustomerSk"
           TopLeft="115,157" />
@@ -2046,9 +2169,21 @@ where [refTable].[ShipperID] = ?</property>
           Id="Package\Load Sales\New Sales"
           TopLeft="300,590" />
         <NodeLayout
+          Size="174,42"
+          Id="Package\Load Sales\Lookup EmployeeSK"
+          TopLeft="115,236" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Load Sales\Lookup Sales"
+          TopLeft="129,507" />
+        <NodeLayout
           Size="140,42"
           Id="Package\Load Sales\Load Staging"
           TopLeft="21,590" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Load Sales\Lookup ShipperSK"
+          TopLeft="115,417" />
         <EdgeLayout
           Id="Package\Load Sales.Paths[Lookup No Match Output]"
           TopLeft="221.666666666667,549">
@@ -2081,7 +2216,7 @@ where [refTable].[ShipperID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="15.1102799479167,21.6760168302945,111.6127734375,11.609375"
+              BoundingBox="15.1102799479165,21.6760168302945,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2251,75 +2386,6 @@ where [refTable].[ShipperID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Sales\Lookup EmployeeSK">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimEmployee]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Sales\Lookup ShipperSK">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimShipper]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Sales\Lookup Sales">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[FactSales]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load Sales\Lookup CustomerSk">
     <Properties>
       <Property>
@@ -2379,6 +2445,52 @@ where [refTable].[ShipperID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Sales\Lookup EmployeeSK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimEmployee]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Sales\Lookup Sales">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[FactSales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Sales\Load Staging">
     <Properties>
       <Property>
@@ -2388,6 +2500,29 @@ where [refTable].[ShipperID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Sales\Lookup ShipperSK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimShipper]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

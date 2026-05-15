@@ -9,7 +9,6 @@ BEGIN
     SELECT
         o.OrderID,
 
-        -- Date Keys calculadas
         OrderDateKey =
             CONVERT(INT, CONVERT(VARCHAR(8), o.OrderDate, 112)),
 
@@ -22,15 +21,11 @@ BEGIN
                 ELSE CONVERT(INT, CONVERT(VARCHAR(8), o.ShippedDate, 112))
             END,
 
-        -- Claves naturales para lookups
         o.CustomerID,
         o.EmployeeID,
         o.ShipVia,
 
-        -- Producto
         od.ProductID,
-
-        -- Métricas
         od.Quantity,
         od.UnitPrice,
         od.Discount,
@@ -38,13 +33,12 @@ BEGIN
         SalesAmount =
             od.Quantity * od.UnitPrice * (1 - od.Discount),
 
-        -- Fechas originales
         CAST(o.OrderDate AS DATE) AS OrderDate,
         CAST(o.RequiredDate AS DATE) AS RequiredDate,
         CAST(o.ShippedDate AS DATE) AS ShippedDate
 
     FROM dbo.Orders o
-    INNER JOIN dbo.[Order Details] od
+    INNER JOIN dbo.OrderDetails od
         ON o.OrderID = od.OrderID
 
     WHERE
