@@ -1,55 +1,51 @@
-﻿BEGIN TRAN 
-	DECLARE @startdate DATE = '1996-07-04',
-			@enddate   DATE = '1998-05-06';
-	DECLARE @datelist TABLE(FullDate DATE);
+﻿BEGIN TRAN
 
-	IF @startdate IS NULL
-		BEGIN
-			SELECT TOP 1 
-				   @startdate = FullDate
-			FROM dbo.DimDate 
-			ORDER By DateKey ASC;
-		END
+DECLARE @startdate DATE = '1996-07-04',
+        @enddate   DATE = '1998-05-06';
 
-	WHILE (@startdate <= @enddate)
-	BEGIN 
-		INSERT INTO @datelist(FullDate)
-		SELECT @startdate
+-- Si no existe fecha inicial, tomar la menor fecha existente
+IF @startdate IS NULL
+BEGIN
+    SELECT TOP 1
+           @startdate = FullDate
+    FROM dbo.DimDate
+    ORDER BY DateKey ASC;
+END
 
-		SET @startdate = DATEADD(dd,1,@startdate);
-	END
+WHILE (@startdate <= @enddate)
+BEGIN
 
-	 INSERT INTO dbo.DimDate(DateKey
-							,FullDate 
-							,DayNumberOfWeek 
-							,DayNameOfWeek 
-							,DayNumberOfMonth 
-							,DayNumberOfYear 
-							,WeekNumberOfYear 
-							,[MonthName] 
-							,MonthNumberOfYear 
-							,CalendarQuarter 
-							,CalendarYear 
-							,CalendarSemester)
+    -- Evitar insertar fechas duplicadas
+    IF NOT EXISTS (
+        SELECT 1
+        FROM dbo.DimDate
+        WHERE FullDate = @startdate
+    )
+    BEGIN
 
-	SELECT DateKey           = CONVERT(INT,CONVERT(VARCHAR,dl.FullDate,112))
-		  ,FullDate          = dl.FullDate
-		  ,DayNumberOfWeek   = DATEPART(dw,dl.FullDate)
-		  ,DayNameOfWeek     = DATENAME(WEEKDAY,dl.FullDate) 
-		  ,DayNumberOfMonth  = DATEPART(d,dl.FullDate)
-		  ,DayNumberOfYear   = DATEPART(dy,dl.FullDate)
-		  ,WeekNumberOfYear  = DATEPART(wk, dl.FUllDate)
-		  ,[MonthName]       = DATENAME(MONTH,dl.FullDate) 
-		  ,MonthNumberOfYear = MONTH(dl.FullDate)
-		  ,CalendarQuarter   = DATEPART(qq, dl.FullDate)
-		  ,CalendarYear      = YEAR(dl.FullDate)
-		  ,CalendarSemester  = CASE DATEPART(qq, dl.FullDate)
-									WHEN 1 THEN 1
-									WHEN 2 THEN 1
-									WHEN 3 THEN 2
-									WHEN 4 THEN 2
-							  END
-	FROM @datelist              dl 
-	LEFT OUTER JOIN dbo.DimDate dd ON (dl.FullDate = dd.FullDate)
-	WHERE dd.FullDate IS NULL;
-COMMIT TRAN
+        INSERT INTO dbo.DimDate
+        (
+            DateKey,
+            FullDate,
+            [Year],
+            [Quarter],
+            [Month],
+            [Day]
+        )
+        VALUES
+        (
+            CONVERT(INT, CONVERT(VARCHAR(8), @startdate, 112)), -- YYYYMMDD
+            @startdate,
+            YEAR(@startdate),
+            DATEPART(QUARTER, @startdate),
+            MONTH(@startdate),
+            DAY(@startdate)
+        );
+
+    END
+
+    SET @startdate = DATEADD(DAY, 1, @startdate);
+
+END
+
+COMMIT TRAN;
