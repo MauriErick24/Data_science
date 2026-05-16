@@ -6,6 +6,11 @@
     <Platform Name="Any CPU" />
     <Platform Name="x86" />
   </Configurations>
+  <Folder Name="/Files/" />
+  <Folder Name="/Files/SQL_Scripts/" />
+  <Folder Name="/Files/SQL_Scripts/DW/">
+    <File Path="Populate_DimDate.sql" />
+  </Folder>
   <Project Path="NorthWindDW/NorthWindDW.sqlproj" Id="1a0d5e73-75f8-4b7a-9c13-254d2e2a7640">
     <BuildType Solution="Development|*" Project="Release" />
     <Platform Project="AnyCPU" />
