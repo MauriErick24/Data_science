@@ -17,11 +17,6 @@
     <Build />
     <Deploy />
   </Project>
-  <Project Path="NorthWindOLAP/NorthWindOLAP.smproj" Type="6870e480-7721-4708-bfb8-9ae898aa21b3" Id="8ce414bb-95b2-4c99-9e03-51ba72086e22">
-    <BuildType Project="Development" />
-    <Platform Project="x86" />
-    <Deploy />
-  </Project>
   <Project Path="NorthWindOLTP/NorthWindOLTP.sqlproj" Id="c3ca2ecd-9dd3-48e3-bee1-8943b07d6963">
     <BuildType Solution="Development|*" Project="Release" />
     <Platform Project="AnyCPU" />
