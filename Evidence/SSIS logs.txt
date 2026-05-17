@@ -1,0 +1,144 @@
+employee execution:
+
+Iniciando el paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\employees.dtsx'.
+Información: 0x4004300A en Load Employees, SSIS.Pipeline: Validation phase is beginning.
+Información: 0x4004300A en Load Employees, SSIS.Pipeline: Validation phase is beginning.
+Advertencia: 0x80049304 en Load Employees, SSIS.Pipeline: Warning: Could not open global shared memory to communicate with performance DLL; data flow performance counters are not available.  To resolve, run this package as an administrator, or on the system's console.
+Advertencia: 0x80047076 en Load Employees, SSIS.Pipeline: The output column "LastName" (16) on output "OLE DB Source Output" (13) and component "Get Employees" (2) is not subsequently used in the Data Flow task. Removing this unused output column can increase Data Flow task performance.
+Información: 0x40043006 en Load Employees, SSIS.Pipeline: Prepare for Execute phase is beginning.
+Información: 0x40043007 en Load Employees, SSIS.Pipeline: Pre-Execute phase is beginning.
+Información: 0x400490F4 en Load Employees, Lookup [97]: Lookup has cached 9 rows.
+Información: 0x400490F5 en Load Employees, Lookup [97]: Lookup has cached a total of 9 rows.
+Información: 0x40209340 en Load Employees, Lookup [97]: The number of unique rows added to the cache is 9.
+Información: 0x402090E2 en Load Employees, Lookup [97]: The Lookup processed 9 rows in the cache. The processing time was 0.031 seconds. The cache used 432 bytes of memory.
+Información: 0x4004300C en Load Employees, SSIS.Pipeline: Execute phase is beginning.
+Información: 0x402090DF en Load Employees, Load Staging [68]: The final commit for the data insertion in "Load Staging" has started.
+Información: 0x402090DF en Load Employees, Load Dim [38]: The final commit for the data insertion in "Load Dim" has started.
+Información: 0x402090E0 en Load Employees, Load Staging [68]: The final commit for the data insertion  in "Load Staging" has ended.
+Información: 0x402090E0 en Load Employees, Load Dim [38]: The final commit for the data insertion  in "Load Dim" has ended.
+Información: 0x40043008 en Load Employees, SSIS.Pipeline: Post Execute phase is beginning.
+Información: 0x4004300B en Load Employees, SSIS.Pipeline: "Load Dim" wrote 0 rows.
+Información: 0x4004300B en Load Employees, SSIS.Pipeline: "Load Staging" wrote 0 rows.
+Información: 0x40043009 en Load Employees, SSIS.Pipeline: Cleanup phase is beginning.
+Paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\employees.dtsx' finalizado: Correcto.
+El programa '[19780] DtsDebugHost.exe: DTS' terminó con código 0 (0x0).
+
+customers execution:
+
+Iniciando el paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\customers.dtsx'.
+Información: 0x4004300A en Load Customers, SSIS.Pipeline: Validation phase is beginning.
+Información: 0x4004300A en Load Customers, SSIS.Pipeline: Validation phase is beginning.
+Advertencia: 0x80049304 en Load Customers, SSIS.Pipeline: Warning: Could not open global shared memory to communicate with performance DLL; data flow performance counters are not available.  To resolve, run this package as an administrator, or on the system's console.
+Advertencia: 0x80047076 en Load Customers, SSIS.Pipeline: The output column "ContactName" (16) on output "OLE DB Source Output" (13) and component "Get Customers" (2) is not subsequently used in the Data Flow task. Removing this unused output column can increase Data Flow task performance.
+Advertencia: 0x80047076 en Load Customers, SSIS.Pipeline: The output column "PostalCode" (20) on output "OLE DB Source Output" (13) and component "Get Customers" (2) is not subsequently used in the Data Flow task. Removing this unused output column can increase Data Flow task performance.
+Advertencia: 0x80047076 en Load Customers, SSIS.Pipeline: The output column "Phone" (21) on output "OLE DB Source Output" (13) and component "Get Customers" (2) is not subsequently used in the Data Flow task. Removing this unused output column can increase Data Flow task performance.
+Información: 0x40043006 en Load Customers, SSIS.Pipeline: Prepare for Execute phase is beginning.
+Información: 0x40043007 en Load Customers, SSIS.Pipeline: Pre-Execute phase is beginning.
+Información: 0x400490F4 en Load Customers, Lookup [98]: Lookup has cached 91 rows.
+Información: 0x400490F5 en Load Customers, Lookup [98]: Lookup has cached a total of 91 rows.
+Información: 0x40209340 en Load Customers, Lookup [98]: The number of unique rows added to the cache is 91.
+Información: 0x402090E2 en Load Customers, Lookup [98]: The Lookup processed 91 rows in the cache. The processing time was 0.031 seconds. The cache used 5096 bytes of memory.
+Información: 0x4004300C en Load Customers, SSIS.Pipeline: Execute phase is beginning.
+Información: 0x402090DF en Load Customers, Load Staging [69]: The final commit for the data insertion in "Load Staging" has started.
+Información: 0x402090DF en Load Customers, Load Dim [41]: The final commit for the data insertion in "Load Dim" has started.
+Información: 0x402090E0 en Load Customers, Load Staging [69]: The final commit for the data insertion  in "Load Staging" has ended.
+Información: 0x402090E0 en Load Customers, Load Dim [41]: The final commit for the data insertion  in "Load Dim" has ended.
+Información: 0x40043008 en Load Customers, SSIS.Pipeline: Post Execute phase is beginning.
+Información: 0x4004300B en Load Customers, SSIS.Pipeline: "Load Dim" wrote 0 rows.
+Información: 0x4004300B en Load Customers, SSIS.Pipeline: "Load Staging" wrote 0 rows.
+Información: 0x40043009 en Load Customers, SSIS.Pipeline: Cleanup phase is beginning.
+Paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\customers.dtsx' finalizado: Correcto.
+El programa '[22156] DtsDebugHost.exe: DTS' terminó con código 0 (0x0).
+
+
+product execution:
+
+Iniciando el paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\products.dtsx'.
+Información: 0x4004300A en Load Products, SSIS.Pipeline: Validation phase is beginning.
+Información: 0x4004300A en Load Products, SSIS.Pipeline: Validation phase is beginning.
+Advertencia: 0x80049304 en Load Products, SSIS.Pipeline: Warning: Could not open global shared memory to communicate with performance DLL; data flow performance counters are not available.  To resolve, run this package as an administrator, or on the system's console.
+Información: 0x40043006 en Load Products, SSIS.Pipeline: Prepare for Execute phase is beginning.
+Información: 0x40043007 en Load Products, SSIS.Pipeline: Pre-Execute phase is beginning.
+Información: 0x400490F4 en Load Products, Lookup [96]: Lookup has cached 78 rows.
+Información: 0x400490F5 en Load Products, Lookup [96]: Lookup has cached a total of 78 rows.
+Información: 0x40209340 en Load Products, Lookup [96]: The number of unique rows added to the cache is 78.
+Información: 0x402090E2 en Load Products, Lookup [96]: The Lookup processed 78 rows in the cache. The processing time was 0.001 seconds. The cache used 3744 bytes of memory.
+Información: 0x4004300C en Load Products, SSIS.Pipeline: Execute phase is beginning.
+Información: 0x402090DF en Load Products, Load Dim [35]: The final commit for the data insertion in "Load Dim" has started.
+Información: 0x402090DF en Load Products, Load Staging [65]: The final commit for the data insertion in "Load Staging" has started.
+Información: 0x402090E0 en Load Products, Load Dim [35]: The final commit for the data insertion  in "Load Dim" has ended.
+Información: 0x402090E0 en Load Products, Load Staging [65]: The final commit for the data insertion  in "Load Staging" has ended.
+Información: 0x40043008 en Load Products, SSIS.Pipeline: Post Execute phase is beginning.
+Información: 0x4004300B en Load Products, SSIS.Pipeline: "Load Dim" wrote 0 rows.
+Información: 0x4004300B en Load Products, SSIS.Pipeline: "Load Staging" wrote 0 rows.
+Información: 0x40043009 en Load Products, SSIS.Pipeline: Cleanup phase is beginning.
+Paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\products.dtsx' finalizado: Correcto.
+El programa '[15032] DtsDebugHost.exe: DTS' terminó con código 0 (0x0).
+
+
+shippers execution:
+
+Iniciando el paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\shippers.dtsx'.
+Información: 0x4004300A en Load Shippers, SSIS.Pipeline: Validation phase is beginning.
+Advertencia: 0x8020F45F en products, Connection manager "Source.NorthWindOLTP": SSIS Error Code DTS_W_CANNOTACQUIRECONNECTIONFROMCONNECTIONMANAGER.  The AcquireConnection method call to the connection manager "OleDbConnectionManager" failed with error code 0x80004005.  Wait 5 seconds to retry.
+Información: 0x4004300A en Load Shippers, SSIS.Pipeline: Validation phase is beginning.
+Advertencia: 0x80049304 en Load Shippers, SSIS.Pipeline: Warning: Could not open global shared memory to communicate with performance DLL; data flow performance counters are not available.  To resolve, run this package as an administrator, or on the system's console.
+Advertencia: 0x80047076 en Load Shippers, SSIS.Pipeline: The output column "Phone" (16) on output "OLE DB Source Output" (13) and component "Get Shipper" (2) is not subsequently used in the Data Flow task. Removing this unused output column can increase Data Flow task performance.
+Información: 0x40043006 en Load Shippers, SSIS.Pipeline: Prepare for Execute phase is beginning.
+Información: 0x40043007 en Load Shippers, SSIS.Pipeline: Pre-Execute phase is beginning.
+Información: 0x400490F4 en Load Shippers, Lookup [71]: Lookup has cached 3 rows.
+Información: 0x400490F5 en Load Shippers, Lookup [71]: Lookup has cached a total of 3 rows.
+Información: 0x40209340 en Load Shippers, Lookup [71]: The number of unique rows added to the cache is 3.
+Información: 0x402090E2 en Load Shippers, Lookup [71]: The Lookup processed 3 rows in the cache. The processing time was 0.016 seconds. The cache used 144 bytes of memory.
+Información: 0x4004300C en Load Shippers, SSIS.Pipeline: Execute phase is beginning.
+Información: 0x402090DF en Load Shippers, Load Dim [26]: The final commit for the data insertion in "Load Dim" has started.
+Información: 0x402090DF en Load Shippers, Load Staging [48]: The final commit for the data insertion in "Load Staging" has started.
+Información: 0x402090E0 en Load Shippers, Load Dim [26]: The final commit for the data insertion  in "Load Dim" has ended.
+Información: 0x402090E0 en Load Shippers, Load Staging [48]: The final commit for the data insertion  in "Load Staging" has ended.
+Información: 0x40043008 en Load Shippers, SSIS.Pipeline: Post Execute phase is beginning.
+Información: 0x4004300B en Load Shippers, SSIS.Pipeline: "Load Dim" wrote 0 rows.
+Información: 0x4004300B en Load Shippers, SSIS.Pipeline: "Load Staging" wrote 0 rows.
+Información: 0x40043009 en Load Shippers, SSIS.Pipeline: Cleanup phase is beginning.
+Paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\shippers.dtsx' finalizado: Correcto.
+El programa '[16012] DtsDebugHost.exe: DTS' terminó con código 0 (0x0).
+
+
+orders execution:
+
+Iniciando el paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\orders.dtsx'.
+Información: 0x4004300A en Load Sales, SSIS.Pipeline: Validation phase is beginning.
+Información: 0x4004300A en Load Sales, SSIS.Pipeline: Validation phase is beginning.
+Advertencia: 0x80049304 en Load Sales, SSIS.Pipeline: Warning: Could not open global shared memory to communicate with performance DLL; data flow performance counters are not available.  To resolve, run this package as an administrator, or on the system's console.
+Información: 0x40043006 en Load Sales, SSIS.Pipeline: Prepare for Execute phase is beginning.
+Información: 0x40043007 en Load Sales, SSIS.Pipeline: Pre-Execute phase is beginning.
+Información: 0x400490F4 en Load Sales, Lookup CustomerSk [51]: Lookup CustomerSk has cached 91 rows.
+Información: 0x400490F5 en Load Sales, Lookup CustomerSk [51]: Lookup CustomerSk has cached a total of 91 rows.
+Información: 0x40209340 en Load Sales, Lookup CustomerSk [51]: The number of unique rows added to the cache is 91.
+Información: 0x402090E2 en Load Sales, Lookup CustomerSk [51]: The Lookup CustomerSk processed 91 rows in the cache. The processing time was 0.001 seconds. The cache used 5096 bytes of memory.
+Información: 0x400490F4 en Load Sales, Lookup EmployeeSK [76]: Lookup EmployeeSK has cached 9 rows.
+Información: 0x400490F5 en Load Sales, Lookup EmployeeSK [76]: Lookup EmployeeSK has cached a total of 9 rows.
+Información: 0x40209340 en Load Sales, Lookup EmployeeSK [76]: The number of unique rows added to the cache is 9.
+Información: 0x402090E2 en Load Sales, Lookup EmployeeSK [76]: The Lookup EmployeeSK processed 9 rows in the cache. The processing time was 0.001 seconds. The cache used 432 bytes of memory.
+Información: 0x400490F4 en Load Sales, Lookup ProductSK [101]: Lookup ProductSK has cached 78 rows.
+Información: 0x400490F5 en Load Sales, Lookup ProductSK [101]: Lookup ProductSK has cached a total of 78 rows.
+Información: 0x40209340 en Load Sales, Lookup ProductSK [101]: The number of unique rows added to the cache is 78.
+Información: 0x402090E2 en Load Sales, Lookup ProductSK [101]: The Lookup ProductSK processed 78 rows in the cache. The processing time was 0.001 seconds. The cache used 3744 bytes of memory.
+Información: 0x400490F4 en Load Sales, Lookup Sales [126]: Lookup Sales has cached 2155 rows.
+Información: 0x400490F5 en Load Sales, Lookup Sales [126]: Lookup Sales has cached a total of 2155 rows.
+Información: 0x40209340 en Load Sales, Lookup Sales [126]: The number of unique rows added to the cache is 2155.
+Información: 0x402090E2 en Load Sales, Lookup Sales [126]: The Lookup Sales processed 2155 rows in the cache. The processing time was 0.001 seconds. The cache used 103440 bytes of memory.
+Información: 0x400490F4 en Load Sales, Lookup ShipperSK [152]: Lookup ShipperSK has cached 3 rows.
+Información: 0x400490F5 en Load Sales, Lookup ShipperSK [152]: Lookup ShipperSK has cached a total of 3 rows.
+Información: 0x40209340 en Load Sales, Lookup ShipperSK [152]: The number of unique rows added to the cache is 3.
+Información: 0x402090E2 en Load Sales, Lookup ShipperSK [152]: The Lookup ShipperSK processed 3 rows in the cache. The processing time was 0.001 seconds. The cache used 144 bytes of memory.
+Información: 0x4004300C en Load Sales, SSIS.Pipeline: Execute phase is beginning.
+Información: 0x402090DF en Load Sales, New Sales [177]: The final commit for the data insertion in "New Sales" has started.
+Información: 0x402090DF en Load Sales, Load Staging [2]: The final commit for the data insertion in "Load Staging" has started.
+Información: 0x402090E0 en Load Sales, New Sales [177]: The final commit for the data insertion  in "New Sales" has ended.
+Información: 0x402090E0 en Load Sales, Load Staging [2]: The final commit for the data insertion  in "Load Staging" has ended.
+Información: 0x40043008 en Load Sales, SSIS.Pipeline: Post Execute phase is beginning.
+Información: 0x4004300B en Load Sales, SSIS.Pipeline: "Load Staging" wrote 0 rows.
+Información: 0x4004300B en Load Sales, SSIS.Pipeline: "New Sales" wrote 0 rows.
+Información: 0x40043009 en Load Sales, SSIS.Pipeline: Cleanup phase is beginning.
+Paquete SSIS 'D:\MY STUFF\Diplomado ciencia de datos\modulo 2\Nueva carpeta\Data_science\NorthWind\SSIS_NorthWind\orders.dtsx' finalizado: Correcto.
+El programa '[18904] DtsDebugHost.exe: DTS' terminó con código 0 (0x0).
