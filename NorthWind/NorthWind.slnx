@@ -28,8 +28,4 @@
     <Build />
     <Deploy />
   </Project>
-  <Project Path="SSIS_NorthWind/SSIS_NorthWind.dtproj" Type="c9674dcb-5085-4a16-b785-4c70dd1589bd">
-    <BuildType Project="Development" />
-    <Platform Project="?" />
-  </Project>
 </Solution>

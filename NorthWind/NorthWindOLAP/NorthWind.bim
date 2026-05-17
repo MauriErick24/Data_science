@@ -519,7 +519,6 @@
             "name": "NetSales",
             "dataType": "decimal",
             "isDataTypeInferred": true,
-            "isHidden": true,
             "expression": "FactSales[GrossSales]-(FactSales[GrossSales]*FactSales[Discount])",
             "formatString": "\\$#,0.00;-\\$#,0.00;\\$#,0.00",
             "annotations": [
@@ -549,6 +548,18 @@
           {
             "name": "TotalNetSales",
             "expression": "SUM(FactSales[NetSales])"
+          },
+          {
+            "name": "NumberOfSales",
+            "expression": "DISTINCTCOUNT(FactSales[OrderID])"
+          },
+          {
+            "name": "MeanOrder",
+            "expression": "DIVIDE(SUM(FactSales[SalesAmount]), DISTINCTCOUNT(FactSales[OrderID]))"
+          },
+          {
+            "name": "MeanTimeOfShipping",
+            "expression": "AVERAGEX( FactSales, DATEDIFF( FactSales[OrderDate], FactSales[ShippedDate], DAY ))"
           }
         ],
         "annotations": [
